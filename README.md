@@ -3,20 +3,20 @@
 # M:N export with external JSON
 Sample for SQL methods JSON_OBJECT and JSON_ARRAY
 
-This package is inspired by the broken package JSONExportManyToMany](https://openexchange.intersystems.com/package/JSONExportManyToMany) 
-The major difference is that instead of adding %JSONAdaptor to each class
-I used SQL functions to create my JSON objects.
-By this approach, you can add JSON to any class - even deployed ones -
-without any need for change or recompile.
-Additional features  
+This package is inspired by the broken package [JSONExportManyToMany](https://openexchange.intersystems.com/package/JSONExportManyToMany)    
+The major difference is that instead of adding %JSONAdaptor to each class   
+I used SQL functions to create my JSON objects.   
+By this approach, you can add JSON to any class - even deployed ones -   
+without any need for change or recompile.   
+Additional features    
 - dockerfile to be version independent   
 - added support for IPM  
 - added installation guide   
-- added quality tag
-- added demo server
-- added WebTerminal
-- added pretty JSON presentation
-- added significant test dataset   
+- added quality tag  
+- added demo server  
+- added WebTerminal  
+- added pretty JSON presentation    
+- added significant test dataset    
 - added this useful README     
 
 ### Prerequisites    
