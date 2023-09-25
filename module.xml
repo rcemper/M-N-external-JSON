@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="json-export-many-many.ZPM">
+  <Document name="m-n-json.ZPM">
     <Module>
-      <Name>json-export-many-many</Name>
-	  <Description>JSONExport class with Many to Many Relationship</Description> 
-      <Version>1.0.0</Version>
+      <Name>m-n-json</Name>
+	  <Description>Export M:N relationship with JSON</Description> 
+      <Version>0.0.1</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Name="JSONExportManyToMany.PKG"/>
+      <Resource Name="dc.data.rcc.JSON.CLS"/>
     </Module>
   </Document>
 </Export>
