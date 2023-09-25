@@ -1,16 +1,23 @@
 [![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2FJSONExport-ManyToMany-AD&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2FJSONExport-ManyToMany-AD)  
 
-# JSONExport-ManyToMany-AD
-Sample for %JSONExport against a class with Many to Many Relationship   
+# M:N export with external JSON
+Sample for SQL methods JSON_OBJECT and JSON_ARRAY
 
-This package was adopted from the [orphaned predecessor](https://openexchange.intersystems.com/package/JSONExportManyToMany)   
-- fixed dockerfile to be version independent   
-- fixed pending mapping of SuperServer   
+This package is inspired by the broken package JSONExportManyToMany](https://openexchange.intersystems.com/package/JSONExportManyToMany) 
+The major difference is that instead of adding %JSONAdaptor to each class
+I used SQL functions to create my JSON objects.
+By this approach, you can add JSON to any class - even deployed ones -
+without any need for change or recompile.
+Additional features  
+- dockerfile to be version independent   
 - added support for IPM  
 - added installation guide   
 - added quality tag
-- added demo server     
-- enhanced README     
+- added demo server
+- added WebTerminal
+- added pretty JSON presentation
+- added significant test dataset   
+- added this useful README     
 
 ### Prerequisites    
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.    
@@ -42,22 +49,11 @@ After installing this sample, the following two commands can be run from termina
 
 ````
 docker-compose exec iris iris session iris    
-
-do ##class(JSONExportManyToMany.TeacherStudent).Populate()         
-
-do ##class(JSONExportManyToMany.TeacherStudent).Test()    
 ````
 - The test output should appear as follows:
 
 <pre>
-{"Name":"Peter","Teachers":[{"ID":1,"Teacher":{"Name":"Teacher1Name"}},{"ID":2,"Teacher":{"Name":"Teacher2Name"}}]}
- 
-{"Name":"Nael","Teachers":[{"ID":3,"Teacher":{"Name":"Teacher1Name"}},{"ID":4,"Teacher":{"Name":"Teacher3Name"}}]}
- 
-{"Name":"Teacher1Name","Students":[{"ID":1,"Student":{"Name":"Peter"}},{"ID":3,"Student":{"Name":"Nael"}}]}
- 
-{"Name":"Teacher2Name","Students":[{"ID":2,"Student":{"Name":"Peter"}}]}
- 
+
 {"Name":"Teacher3Name","Students":[{"ID":4,"Student":{"Name":"Nael"}}]}
 </pre>
 
