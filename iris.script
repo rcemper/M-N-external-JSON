@@ -3,5 +3,12 @@ Do ##class(Security.Users).UnExpireUserPasswords("*")
 
 zn "USER"
 zpm "install webterminal"
+zpm "install language-extender"
+zpm "install fast-json-format" 
+set code=1
+set code(1)="#include ZZJSON"
+do cmd^zLangExtender("C","ZZJSON",.code)
+do ##class(dc.data.rcc.DCmember).%BuildIndices()
+do ##class(dc.data.rcc.GMbadge).%BuildIndices()
 zpm "load /opt/irisapp/ -v":1
 halt
