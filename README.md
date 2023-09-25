@@ -1,4 +1,4 @@
-[![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2FJSONExport-ManyToMany-AD&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2FJSONExport-ManyToMany-AD)  
+[![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2FM-N-external-JSON&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2FM-N-external-JSON)
 
 # M:N export with external JSON
 Sample for SQL methods JSON_OBJECT and JSON_ARRAY
@@ -44,7 +44,18 @@ To follow the startup you may use
 ````
 docker compose logs -f
 ````
-### Testing  
+### Testing 
+
+Demo-data are imported from a [previous package](https://github.com/rcemper/Dataset-Lightweight-M-N)    
+Is an extract from members in the Developer Community and the Badges available in GlobalMasters   
+- Users have a collection of Badges and Levels    
+- Badges have a collection of Users
+        
+Besides the straight projection of Members or Badges as Array of JSON objects    
+There is also
+- a JSON Object containing the Member Object and an Array of his Badge Objects    
+- similar JSON Object containing a specific Badge Object and an Array of owning Member Objects
+ 
 After installing this sample, the following two commands can be run from terminal or console
 
 ````
@@ -57,11 +68,10 @@ docker-compose exec iris iris session iris
 {"Name":"Teacher3Name","Students":[{"ID":4,"Student":{"Name":"Nael"}}]}
 </pre>
 
-You will notice here that when exporting from Student (First 2 output lines),    
-the relationship to Teacher is followed through TeacherStudent and details of the Teacher are exported.    
+You will    
+exported.   
 
-Likewise, when exporting from Teacher, the relationship to Student is followed through    
-TeacherStudent and details of the Student are exported.   
+[article in DC](void)
 
-[Demo Server SMP](https://json-export-many-many.demo.community.intersystems.com/csp/sys/UtilHome.csp)    
-[Demo Server WebTerminal](https://json-export-many-many.demo.community.intersystems.com/terminal/)   
+[Demo Server SMP](https://m-n-json.demo.community.intersystems.com/csp/sys/UtilHome.csp)    
+[Demo Server WebTerminal](https://m-n-json.demo.community.intersystems.com/terminal/)   
