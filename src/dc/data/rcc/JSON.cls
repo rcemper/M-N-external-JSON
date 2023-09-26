@@ -20,7 +20,7 @@ ClassMethod Badge(
 	ByRef list) As %DynamicObject
 {
   &SQL(
-    SELECT JSON_OBJECT('ID':badgeId,'MbCnt':MbCnt),Members into :res,:list 
+    SELECT JSON_OBJECT('ID':badgeId,'Title':Title,'MbCnt':MbCnt),Members into :res,:list 
       from dc_data_rcc.GMbadge
       where BadgeId = :id 
       )
