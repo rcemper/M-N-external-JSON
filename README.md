@@ -1,6 +1,6 @@
 [![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2FM-N-external-JSON&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2FM-N-external-JSON)
 
-# M:N export with external JSON
+## M:N export with external JSON
 Sample for SQL methods JSON_OBJECT and JSON_ARRAY
 
 This package is inspired by the broken package [JSONExportManyToMany](https://openexchange.intersystems.com/package/JSONExportManyToMany)    
@@ -87,9 +87,20 @@ Provide ID instead of Verbose switch use explicit view
 ````
 ![demo2](https://github.com/rcemper/M-N-external-JSON/assets/31236645/a5862782-be3a-40d4-92eb-bf4a2dc425c5)
 
+#### 3) Export all badges as JSON array      
+All you may provide is the Verbose switch  
+````
+set badges=##class(dc.data.rcc.JSON).allBadges(1)
+````
+![demo3](https://github.com/rcemper/M-N-external-JSON/assets/31236645/5f673ebb-ff9c-48e6-bc82-c3c590443866)
 
+#### 4) Export Members with at least ? badges   
+Provide minimal badge count and a Verbose switch for immediate display  
+````
+ set badges=##class(dc.data.rcc.JSON).activeMembers(40,1)
+````
 
-[article in DC](void)
+[article in DC](https://community.intersystems.com/post/create-json-objects-and-arrays-sql))
 
 [Demo Server SMP](https://m-n-json.demo.community.intersystems.com/csp/sys/UtilHome.csp)    
 [Demo Server WebTerminal](https://m-n-json.demo.community.intersystems.com/terminal/)   
