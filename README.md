@@ -47,7 +47,8 @@ docker compose logs -f
 ### Testing 
 
 Demo-data are imported from a [previous package](https://github.com/rcemper/Dataset-Lightweight-M-N)    
-Is an extract from members in the Developer Community and the Badges available in GlobalMasters   
+Is an extract from members in the Developer Community and the Badges available in GlobalMasters  
+Real names are scrambled. 
 - Users have a collection of Badges and Levels    
 - Badges have a collection of Users
         
@@ -61,15 +62,32 @@ After installing this sample, the following two commands can be run from termina
 ````
 docker-compose exec iris iris session iris    
 ````
-- The test output should appear as follows:
+- Members and Badges in the demo are referred by their ID
+- Suitable IDs could be found by straight SQL queries
+````
+  select top 10 %ID,BadgeCount from dc_data_rcc.DCmember  
+  where BadgeCount>2 order by badgecount
+  -
+  select top 10 %ID,MbCnt from dc_data_rcc.GMbadge
+  where MbCnt>3 order by 2
+````
 
-<pre>
+#### 1) JSON by Badge      
+Provide ID and a Verbose switch for immediate display  
+````
+ set b=##class(dc.data.rcc.JSON).byBadge(47,1)
+````
+  ![demo1](https://github.com/rcemper/M-N-external-JSON/assets/31236645/5a0c61df-9c3c-44d3-9714-98555df14361)
 
-{"Name":"Teacher3Name","Students":[{"ID":4,"Student":{"Name":"Nael"}}]}
-</pre>
+#### 2) JSON by Member
+Provide ID instead of Verbose switch use explicit view  
+````
+ set res=##class(dc.data.rcc.JSON).byMember(9976)
+ zzjson res
+````
+![demo2](https://github.com/rcemper/M-N-external-JSON/assets/31236645/a5862782-be3a-40d4-92eb-bf4a2dc425c5)
 
-You will    
-exported.   
+
 
 [article in DC](void)
 
