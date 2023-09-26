@@ -47,7 +47,7 @@ docker compose logs -f
 ### Testing 
 
 Demo-data are imported from a [previous package](https://github.com/rcemper/Dataset-Lightweight-M-N)    
-Is an extract from members in the Developer Community and the Badges available in GlobalMasters  
+It's an extract from members in the Developer Community and the Badges available in GlobalMasters  
 Real names are scrambled. 
 - Users have a collection of Badges and Levels    
 - Badges have a collection of Users
