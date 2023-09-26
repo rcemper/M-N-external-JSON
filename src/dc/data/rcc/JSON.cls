@@ -82,7 +82,8 @@ ClassMethod activeMembers(
   set sql(1)="SELECT JSON_OBJECT('ID':MbrId,'name':Name,'BadgeCount':BadgeCount)"
     , sql(2)=" from dc_data_rcc.DCmember"
     , sql(3)=" where NOT BadgeCount < "_minbadge 
-    , sql=3
+    , sql(4)=" order by BadgeCount desc " 
+    , sql=4
     , tRes = ##class(%SQL.Statement).%ExecDirect(,.sql)
     , arr=[]
   while tRes.%Next() {
@@ -93,6 +94,7 @@ ClassMethod activeMembers(
   quit arr
 }
 
+/// might be required
 ClassMethod BI() As %Status
 {
   set sc1=##class(dc.data.rcc.DCmember).%BuildIndices()
