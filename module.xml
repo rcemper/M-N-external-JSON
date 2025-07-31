@@ -4,7 +4,7 @@
     <Module>
       <Name>m-n-json</Name>
 	  <Description>Export M:N relationship with JSON</Description> 
-      <Version>0.0.1</Version>
+      <Version>0.0.2</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="dc.data.rcc.JSON.CLS"/>
