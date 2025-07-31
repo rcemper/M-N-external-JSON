@@ -101,6 +101,3 @@ Provide minimal badge count and a Verbose switch for immediate display
 ````
 
 [Article in DC](https://community.intersystems.com/post/create-json-objects-and-arrays-sql)
-
-[Demo Server SMP](https://m-n-json.demo.community.intersystems.com/csp/sys/UtilHome.csp)    
-[Demo Server WebTerminal](https://m-n-json.demo.community.intersystems.com/terminal/)   
