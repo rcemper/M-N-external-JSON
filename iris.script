@@ -2,7 +2,7 @@ zn "%SYS"
 Do ##class(Security.Users).UnExpireUserPasswords("*")
 
 zn "USER"
-zpm "install webterminal"
+zpm "install iterm"
 zpm "install language-extender"
 zpm "install fast-json-format" 
 set code=1
